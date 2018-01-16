@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 # Pull the packages in from a more human readable file
-#packages=("${(@f)$(cat aur.list)}")
-readarray -t packages <aur.list
+packages=("${(@f)$(cat aur.list)}")
+#readarray -t packages <aur.list
 
 # Clean everything up
 if [[ -d ./aur-repo/packages ]]; then
@@ -10,8 +10,7 @@ if [[ -d ./aur-repo/packages ]]; then
 		rm -rf ./aur-repo/*
 	fi
 else
-	mkdir ./aur-repo
-	mkdir ./aur-repo/packages
+	mkdir -p ./aur-repo/packages
 fi
 
 if [[ -d ./aur-repo/x86_64 ]]; then
@@ -54,8 +53,4 @@ done
 cd ..
 if [[ ! -e ./x86_64/*.pkg.tar.xz ]]; then
 	repo-add -n ./x86_64/customrepo.db.tar.gz ./x86_64/*.pkg.tar.xz
-fi
-
-if [[ ! -e ./i686/*.pkg.tar.xz ]]; then
-	repo-add -n ./i686/customrepo.db.tar.gz ./i686/*.pkg.tar.xz
 fi

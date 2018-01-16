@@ -1,6 +1,5 @@
 packer
 adapta-gtk-theme-git
-budgie-desktop-git
 bullet-train-oh-my-zsh-theme-git
 google-chrome
 oh-my-zsh-git
@@ -8,8 +7,6 @@ papirus-icon-theme-git
 powerline-fonts-git
 spotify
 xcursor-breeze
-zsh-syntax-highlighting-git
 ttf-vista-fonts
 ttf-ms-fonts
-gnome-terminal-fedora
-lightdm-slick-greeter
+sublime-text-dev
