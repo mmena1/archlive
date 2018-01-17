@@ -16,9 +16,9 @@
 ######################################################################
 
 # ISO Specific Variables
-ISO_HOST="spice"                           		# ISO Host Name
+ISO_HOST="Arch"                           		# ISO Host Name
 ISO_USER="liveuser"           						# Live user account
-VERSION="Spice Installation Framework 2.2.1"		# Installer Name / Version
+VERSION="Arch Installation Framework 2.2.1"		# Installer Name / Version
 TRANS_SRC="/abif-master"							# Dir where translation files are stored
 
 # Create a temporary file to store menu selections
@@ -1483,8 +1483,8 @@ install_root(){
   [[ -e /tmp/01-keyboard-layout.conf ]] && cp -f /tmp/01-keyboard-layout.conf ${MOUNTPOINT}/etc/X11/xorg.conf.d/$(ls ${MOUNTPOINT}/etc/X11/xorg.conf.d/ | grep "keyboard") 2>>/tmp/.errlog
   
   # Display Manager
-  arch_chroot "systemctl enable lxdm" 2>>/tmp/.errlog
-  cp -f /inst/lxdm.conf ${MOUNTPOINT}/etc/lxdm/lxdm.conf 2>>/tmp/.errlog
+  arch_chroot "systemctl enable lightdm" 2>>/tmp/.errlog
+  cp -f /inst/lightdm.conf ${MOUNTPOINT}/etc/lightdm/lightdm.conf 2>>/tmp/.errlog
   [[ -d ${MOUNTPOINT}/inst ]] && rm -R ${MOUNTPOINT}/inst &> /dev/null 2>>/tmp/.errlog
   check_for_error
   
@@ -1877,7 +1877,7 @@ edit_configs() {
    "7" "/etc/fstab" \
    "8" "/etc/crypttab" \
    "9" "grub/syslinux/systemd-boot" \
-   "10" "/etc/lxdm/lxdm.conf" \
+   "10" "/etc/lightdm/lightdm.conf" \
    "11" "/etc/pacman.conf" \
    "12" "$_Back" 2>${ANSWER}
 	
@@ -1909,7 +1909,7 @@ edit_configs() {
 				done
 			 fi
             ;;
-        "10") [[ -e ${MOUNTPOINT}/etc/lxdm/lxdm.conf ]] && FILE="${MOUNTPOINT}/etc/lxdm/lxdm.conf" 
+        "10") [[ -e ${MOUNTPOINT}/etc/lightdm/lightdm.conf ]] && FILE="${MOUNTPOINT}/etc/lightdm/lightdm.conf" 
             ;;
         "11") [[ -e ${MOUNTPOINT}/etc/pacman.conf ]] && FILE="${MOUNTPOINT}/etc/pacman.conf"
 			;;
