@@ -453,6 +453,7 @@ create_new_user() {
 	   arch_chroot "passwd ${USER}" < /tmp/.passwd >/dev/null 2>>/tmp/.errlog  
      
 	   # Set up basic configuration files and ownership for new account
+     arch_chroot "rm /etc/skel/Desktop/Arch.desktop" 2>>/tmp/.errlog
 	   arch_chroot "cp -R /etc/skel/ /home/${USER}" 2>>/tmp/.errlog
 	   arch_chroot "chown -R ${USER}:users /home/${USER}" 2>>/tmp/.errlog
 	   check_for_error
@@ -1467,7 +1468,6 @@ install_root(){
 
   # remove packages
   arch_chroot "pacman -Rns geany --noconfirm"
-  arch_chroot "rm /etc/skel/Desktop/Arch.desktop"
 
   # Journal
   sed -i 's/volatile/auto/g' ${MOUNTPOINT}/etc/systemd/journald.conf 2>>/tmp/.errlog
