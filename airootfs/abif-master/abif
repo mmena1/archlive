@@ -449,7 +449,7 @@ create_new_user() {
 	   check_for_error
 	else
 	   # If the live account has already been changed, create a new user account
-	   arch_chroot "useradd ${USER} -m -g users -G wheel,storage,power,network,video,audio,lp -s /bin/bash" 2>/tmp/.errlog   
+	   arch_chroot "useradd ${USER} -m -g users -G wheel,storage,power,network,video,audio,lp -s /bin/zsh" 2>/tmp/.errlog   
 	   arch_chroot "passwd ${USER}" < /tmp/.passwd >/dev/null 2>>/tmp/.errlog  
      
 	   # Set up basic configuration files and ownership for new account
@@ -1467,6 +1467,7 @@ install_root(){
 
   # remove packages
   arch_chroot "pacman -Rns geany --noconfirm"
+  arch_chroot "rm /etc/skel/Desktop/Arch.desktop"
 
   # Journal
   sed -i 's/volatile/auto/g' ${MOUNTPOINT}/etc/systemd/journald.conf 2>>/tmp/.errlog
