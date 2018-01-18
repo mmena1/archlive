@@ -1,0 +1,7 @@
+[Desktop Entry]
+Comment=Install Archlinux
+Terminal=false
+Name=Install Archlinux
+Exec=sudo deepin-terminal -e /abif-master/abif
+Type=Application
+Icon=distributor-logo-archlinux
