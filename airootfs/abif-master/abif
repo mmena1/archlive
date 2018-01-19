@@ -442,6 +442,7 @@ create_new_user() {
 	   sed -i "s/$ISO_USER/$USER/g" ${MOUNTPOINT}/etc/shadow 2>>/tmp/.errlog
 	   mv ${MOUNTPOINT}/home/$ISO_USER ${MOUNTPOINT}/home/$USER 2>>/tmp/.errlog
 	   chown -R $USER:users ${MOUNTPOINT}/home/$USER 2>>/tmp/.errlog
+     rm ${MOUNTPOINT}/home/$USER/Desktop/Arch.desktop
         
 	   # Change sudoers file to require passwords for sudo commands
 	   sed -i '/%wheel ALL=(ALL) ALL/s/^#//' ${MOUNTPOINT}/etc/sudoers 2>>/tmp/.errlog
