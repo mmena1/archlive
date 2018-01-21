@@ -6,10 +6,16 @@ This is my personal Arch Linux distro using `archiso` and based on https://githu
 
 ## Post install
 Restart the system and login to the newly installed Arch Linux OS. Be sure to follow the next instructions to fix some things.
+
+## Synchronize `pacman` repositories
+Before doing anything you **MUST** have to syncronize the `pacman` repositories because they are empty and you won't be able to download anything. So, to synchronize and to make sure the system is up to date execute the following:
+```
+sudo pacman -Syyu
+```
 ### Reconfigure GRUB
 If you are using EFI in a GPT partition and chose GRUB as the default bootloader while dual-booting with Windows, you need to recreate the GRUB config file so that the Windows loader can get recognized properly. You need to execute:
 ```
-# sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 ### Disabling IPv6
 With this basic installation, IPv6 support is enabled by default. So, if you are not using IPv6 support, the boot will take around 25 seconds longer trying to get a lease from the dhcp server, which is quite annoying. As stated in the [wiki](https://wiki.archlinux.org/index.php/IPv6#Disable_IPv6), the best way to fix this is to directly disable the IPv6 support from the kernel line. In other words, you need to edit the file `/etc/default/grub` and append the kernel option `ipv6.disable_ipv6=1` to the `GRUB_CMDLINE_LINUX_DEFAULT` line. It should be something like this:
