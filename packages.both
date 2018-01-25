@@ -73,13 +73,13 @@ archlinux-wallpaper
 deepin
 deepin-extra
 curl
-wpa_supplicant
+#wpa_supplicant
 alsa-utils
-#xorg-drivers
+xorg-drivers
 xorg-server
 xorg-xinit
 #xorg-apps
-#mesa
+mesa
 nano
 ttf-dejavu
 zsh
@@ -89,6 +89,8 @@ networkmanager
 geany
 faenza-icon-theme
 efibootmgr
+os-prober
+htop
 
 packer
 adapta-gtk-theme-git
