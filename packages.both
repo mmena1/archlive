@@ -91,7 +91,19 @@ faenza-icon-theme
 efibootmgr
 os-prober
 htop
+networkmanager-pptp
+libreoffice-fresh
+libreoffice-fresh-es
 
+#dev
+maven
+virtualbox
+virtualbox-ext-vnc
+virtualbox-host-modules-arch
+archiso
+thunderbird
+
+#aur
 packer
 adapta-gtk-theme-git
 bullet-train-oh-my-zsh-theme-git
@@ -104,3 +116,8 @@ xcursor-breeze
 ttf-vista-fonts
 ttf-ms-fonts
 sublime-text-dev
+
+#aur-dev
+intellij-idea-ue-eap
+jdk8
+slack-desktop
