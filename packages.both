@@ -98,6 +98,7 @@ cups
 cups-pdf
 system-config-printer
 remmina
+freerdp
 
 packer
 adapta-gtk-theme-git
