@@ -10,7 +10,7 @@ ln -sf /usr/share/zoneinfo/America/Guayaquil /etc/localtime
 usermod -s /usr/bin/zsh root
 cp -aT /etc/skel/ /root/
 chmod 700 /root
-useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /bin/zsh liveuser
+useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel,video,audio,lp,sys" -s /bin/zsh liveuser
 chown -R liveuser:users /home/liveuser
 
 sed -i 's/#\(PermitRootLogin \).\+/\1yes/' /etc/ssh/sshd_config
