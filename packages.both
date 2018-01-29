@@ -91,6 +91,12 @@ faenza-icon-theme
 efibootmgr
 os-prober
 htop
+networkmanager-pptp
+libreoffice-fresh
+libreoffice-fresh-es
+cups
+cups-pdf
+system-config-printer
 
 packer
 adapta-gtk-theme-git
