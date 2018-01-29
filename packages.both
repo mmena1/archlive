@@ -94,6 +94,9 @@ htop
 networkmanager-pptp
 libreoffice-fresh
 libreoffice-fresh-es
+cups
+cups-pdf
+system-config-printer
 
 #dev
 maven
